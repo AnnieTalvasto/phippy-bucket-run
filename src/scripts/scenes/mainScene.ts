@@ -79,6 +79,27 @@ export default class MainScene extends Phaser.Scene {
         bucket.refreshBody()
       }
 
+      const jumpButton = this.add.text(
+        20,
+        this.cameras.main.height - 100,
+        '⬆️',
+        {
+          fontSize: '48px',
+          backgroundColor: '#ffffff',
+          color: '#000000',
+          padding: { x: 10, y: 5 },
+        }
+      )
+        .setScrollFactor(0)
+        .setInteractive()
+        .on('pointerdown', () => {
+          if (this.player.body.blocked.down) {
+            this.player.setVelocityY(-330)
+          }
+        })
+      
+
+
       // Bug obstacle (small)
       if (Phaser.Math.Between(0, 1)) {
         const obstacle = this.obstacles.create(x + 50, y, 'obstacle')
