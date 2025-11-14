@@ -49,7 +49,7 @@ export default class MainScene extends Phaser.Scene {
     this.physics.add.overlap(this.player, this.buckets, this.collectBucket, undefined, this)
 
     // Score UI
-    this.scoreText = this.add.text(16, 16, 'Buckets: 0', {
+    this.scoreText = this.add.text(16, 16, 'LGTM: 0', {
       fontSize: '24px',
       color: '#000000'
     }).setScrollFactor(0)
@@ -75,7 +75,7 @@ export default class MainScene extends Phaser.Scene {
       // Bucket
       const bucket = this.buckets.create(x, y, 'bucket')
       if (bucket) {
-        bucket.setScale(0.2)
+        bucket.setScale(0.1)
         bucket.refreshBody()
       }
 
